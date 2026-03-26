@@ -214,15 +214,8 @@ export default function DashboardPage() {
         </div>
       )}
 
-      {/* Stats grid */}
-      <div
-        style={{
-          display:             "grid",
-          gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))",
-          gap:                 "var(--space-4)",
-          marginBottom:        "var(--space-8)",
-        }}
-      >
+      {/* Stats grid — 2×2 on mobile, 4-col on sm+ */}
+      <div className="stats-grid">
         <StatCard
           label="Articles"
           value={loading ? "—" : (data?.total_articles ?? 0)}

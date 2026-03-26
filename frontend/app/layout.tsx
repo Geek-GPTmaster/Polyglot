@@ -3,6 +3,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/lib/context/LanguageContext";
 import { ToastProvider } from "@/components/Toast";
 import NavBar from "@/components/NavBar";
+import FontSizeSync from "@/components/FontSizeSync";
 
 export const metadata: Metadata = {
   title: "Polyglot — Language Learning Reader",
@@ -25,6 +26,7 @@ export default function RootLayout({
         />
       </head>
       <body>
+        <FontSizeSync />
         <LanguageProvider>
           <ToastProvider>
             <NavBar />

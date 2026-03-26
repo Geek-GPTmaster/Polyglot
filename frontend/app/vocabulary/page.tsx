@@ -332,7 +332,7 @@ export default function VocabularyPage() {
           </p>
         </div>
       ) : (
-        <div style={{ background: "var(--color-paper-dark)", border: "1px solid var(--color-paper-darker)", borderRadius: "var(--radius-lg)", padding: "0 var(--space-6)", boxShadow: "var(--shadow-card)" }}>
+        <div style={{ background: "var(--color-paper-dark)", border: "1px solid var(--color-paper-darker)", borderRadius: "var(--radius-lg)", padding: "0 var(--space-4)", boxShadow: "var(--shadow-card)" }}>
           {filtered.map((e) => (
             <VocabRow key={e.id} entry={e} tags={tags} onDelete={handleDelete} onUpdate={handleUpdate} />
           ))}

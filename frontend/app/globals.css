@@ -266,6 +266,23 @@ body {
 .article-word.saved  { background: var(--color-accent-faint); color: var(--color-accent-dark); }
 
 /* =========================================================
+   Responsive grids
+   ========================================================= */
+
+/* 2-col on mobile, 4-col on sm+ — used by Dashboard stat cards */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+@media (min-width: 640px) {
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* =========================================================
    Animations
    ========================================================= */
 @keyframes spin {
