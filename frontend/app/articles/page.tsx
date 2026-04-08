@@ -7,6 +7,7 @@ import { useLanguage } from "@/lib/context/LanguageContext";
 import { fetchArticles } from "@/lib/api";
 import { useToast } from "@/components/Toast";
 import ImportModal from "@/components/ImportModal";
+import CameraImportModal from "@/components/CameraImportModal";
 import type { ArticleImportResponse, ArticleListItem } from "@/lib/types";
 
 // ---------------------------------------------------------------------------
@@ -110,9 +111,10 @@ export default function ArticlesPage() {
   const { activeLang } = useLanguage();
   const { toast }      = useToast();
 
-  const [articles, setArticles] = useState<ArticleListItem[]>([]);
-  const [loading, setLoading]   = useState(true);
-  const [importOpen, setImportOpen] = useState(false);
+  const [articles, setArticles]       = useState<ArticleListItem[]>([]);
+  const [loading, setLoading]         = useState(true);
+  const [importOpen, setImportOpen]   = useState(false);
+  const [cameraOpen, setCameraOpen]   = useState(false);
 
   const loadArticles = useCallback(() => {
     setLoading(true);
@@ -189,6 +191,13 @@ export default function ArticlesPage() {
         open={importOpen}
         onClose={() => setImportOpen(false)}
         onSuccess={handleImportSuccess}
+        onCameraRequest={() => { setImportOpen(false); setCameraOpen(true); }}
+      />
+      <CameraImportModal
+        open={cameraOpen}
+        onClose={() => setCameraOpen(false)}
+        onSuccess={handleImportSuccess}
+        language={activeLang}
       />
     </div>
   );

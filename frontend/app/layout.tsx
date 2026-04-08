@@ -4,6 +4,7 @@ import { LanguageProvider } from "@/lib/context/LanguageContext";
 import { ToastProvider } from "@/components/Toast";
 import NavBar from "@/components/NavBar";
 import FontSizeSync from "@/components/FontSizeSync";
+import PushRegistrar from "@/components/PushRegistrar";
 
 export const metadata: Metadata = {
   title: "Polyglot — Language Learning Reader",
@@ -27,6 +28,7 @@ export default function RootLayout({
       </head>
       <body>
         <FontSizeSync />
+        <PushRegistrar />
         <LanguageProvider>
           <ToastProvider>
             <NavBar />

@@ -8,6 +8,7 @@ from api.routes import (
     definitions,
     export,
     languages,
+    notifications,
     review,
     saves,
     settings,
@@ -52,6 +53,7 @@ app.include_router(tags.router)
 app.include_router(settings.router)
 app.include_router(dashboard.router)
 app.include_router(export.router)
+app.include_router(notifications.router)
 
 
 @app.get("/api/health")
